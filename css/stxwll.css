@@ -1,0 +1,7 @@
+.shenglue{
+	color: #828282;
+	overflow: hidden;
+	display: -webkit-box;
+	-webkit-box-orient: vertical;
+	-webkit-line-clamp: 3 /*几行就写数字几*/
+}
