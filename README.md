@@ -12,7 +12,7 @@
 
 将服务器目录设置到bs文件夹，网站设置到bs文件夹
 
-选择设置->配置文件->点击你的php版本->[设置session]([php session 不同页面,php SESSION不能跨页面传递怎么办_weixin_39634576的博客-CSDN博客](https://blog.csdn.net/weixin_39634576/article/details/115505503))
+选择设置->配置文件->点击你的php版本->[设置session](https://blog.csdn.net/weixin_39634576/article/details/115505503)
 
 “软件管理”中下载PHPMyAdmin
 
