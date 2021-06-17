@@ -36,7 +36,7 @@
 
 将服务器目录设置到bs文件夹，网站设置到bs文件夹
 
-选择设置->配置文件->点击你的php版本->[设置session](https://blog.csdn.net/weixin_39634576/article/details/115505503)
+选择设置->配置文件->点击你的php版本->[设置session](https://blog.csdn.net/weixin_39634576/article/details/115505503)：打开php的配置文件（php.ini），搜索“session.auto_start”，将它的值改成“1”。
 
 “软件管理”中下载PHPMyAdmin
 
