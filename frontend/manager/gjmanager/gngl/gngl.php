@@ -14,7 +14,7 @@
 	<div class="row clearfix">
 		<div class="col-md-12 column">
 		    <nav class="navbar navbar-light navbar-expand-md navigation-clean">
-        <div class="container"><a class="navbar-brand" href="/frontend/manager/bmmanagermain.php">社团信息管理系统（部门后台模式）</a><button data-toggle="collapse" class="navbar-toggler" data-target="#navcol-1"><span class="sr-only">Toggle navigation</span><span class="navbar-toggler-icon"></span></button>
+        <div class="container"><a class="navbar-brand" href="/frontend/manager/gjmanagermain.php">社团信息管理系统（后台模式）</a><button data-toggle="collapse" class="navbar-toggler" data-target="#navcol-1"><span class="sr-only">Toggle navigation</span><span class="navbar-toggler-icon"></span></button>
             <div class="collapse navbar-collapse" id="navcol-1">
                 <ul class="navbar-nav ml-auto">
                     <li class="nav-item"><a class="nav-link" href="/frontend/grxxwh/grxxwh.php">个人信息维护</a></li>
@@ -32,57 +32,37 @@
     </nav>
 		</div>
 	</div>
-	<div class="row clearfix">
-		<div class="col-md-4 column">
+		<div class="row clearfix">
+		<div class="col-md-12 column">
 		<table class="table table-hover" >
-		<h1>后台管理</h1>
+		<h1>功能管理</h1>
   <tbody>
       <tr>
-      <td><a href="bmmanager/yhgl/yhgl.php" class="btn btn-link">部门成员管理</a></td>
+      <td>功能名称</td>
+      <td>功能开关</td>
     </tr>
     <tr>
-      <td><a href="bmmanager/bmgl/bmgl.php" class="btn btn-link">部门管理</a></td>
-    </tr>
-    <tr>
-      <td><a href="bmmanager/hdgl/hdgl.php" class="btn btn-link">活动管理</a></td>
-    </tr>
-    <tr>
-      <td><a href="bmmanager/xwgl/xwgl.php" class="btn btn-link">新闻管理</a></td>
-    </tr>
-    <tr>
-      <td><a href="bmmanager/wjgl/wjgl.php" class="btn btn-link">文件管理</a></td>
-    </tr>
-    <?php 
+            <?php 
 include 'C:\phpstudy_pro\WWW\bs\backend\class\Sql.php';
 //------------------------------------------------------------------------------------------
-  $sql1="select fu_flag from function where fu_name='社团报名系统'";
+  $sql1="select * from function";
   $result=mysqli_query($conn,$sql1);
-  $myrow=mysqli_fetch_array($result);
-  $auth=$myrow[0];
-  if ($auth==1) {
+  while ($myrow=mysqli_fetch_array($result)){
 ?>
-    <tr>
-      <td><a href="bmmanager/ybmgl/ybmgl.php"  class="btn btn-link">预报名管理</a></td>
-    </tr>
-<?php }?>        
+  <td><?php echo $myrow[1];?></td>
+  <td><div class="form-check form-check-inline">
+    <form method="post" action="/backend/gnmanage/gnmanage.php"><input type="hidden" name="id" value="<?php echo $myrow[0]; ?>"><input type="hidden" name="flag" value="1">
+        <button class="btn btn-success" type="submit">开</button></form>
+        <form method="post" action="/backend/gnmanage/gnmanage.php"><input type="hidden" name="id" value="<?php echo $myrow[0]; }?>"><input type="hidden" name="flag" value="0">
+        <button class="btn btn-warning" type="submit">关</button></form></div>
+  </td>
   </tbody>
-</table>
-<div style="margin-bottom:61px">
-<a href="/frontend/main.php" class="btn btn-link">退出管理后台</a>
-</div>
-		</div>
-		<div class="col-md-8 column">
-		</div>
-	</div>
-</div>
-</body>
-<script src="https://cdn.bootcdn.net/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+ </table>
+ <a href="/frontend/manager/gjmanagermain.php" class="btn btn-link">返回</a>
+ </div>
+ </div>
+ </div>
+ </body>
+ <script src="https://cdn.bootcdn.net/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script src="https://cdn.bootcdn.net/ajax/libs/twitter-bootstrap/4.6.0/js/bootstrap.bundle.min.js"></script>
-</html>
-<?php 
-$fromurl="/Error.php"; //跳转往这个地址。
-if( $_SERVER['HTTP_REFERER'] == "" )
-{
-    header("Location:".$fromurl); exit;
-}
-?>
+ </html>

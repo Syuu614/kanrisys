@@ -52,6 +52,9 @@
     <tr>
       <td><a href="gjmanager/wjgl/wjgl.php" class="btn btn-link">文件管理</a></td>
     </tr>
+    <tr>
+      <td><a href="gjmanager/gngl/gngl.php" class="btn btn-link">功能管理</a></td>
+    </tr>
   </tbody>
 </table>
 <div style="margin-bottom:61px">
@@ -59,6 +62,19 @@
 </div>
 		</div>
 		<div class="col-md-8 column">
+		<h2>更多功能</h2>
+		<hr/>
+		 <?php 
+include 'C:\phpstudy_pro\WWW\bs\backend\class\Sql.php';
+//------------------------------------------------------------------------------------------
+  $sql1="select fu_flag from function where fu_name='社团报名系统'";
+  $result=mysqli_query($conn,$sql1);
+  $myrow=mysqli_fetch_array($result);
+  $auth=$myrow[0];
+  if ($auth==1) {
+?>
+<a href="gjmanager/ybmgl/ybmgl.php">预报名管理</a>
+<?php }?>        
 		</div>
 	</div>
 </div>

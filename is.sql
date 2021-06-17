@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- 主机： localhost
--- 生成日期： 2021-06-12 19:02:39
+-- 生成日期： 2021-06-18 00:11:29
 -- 服务器版本： 5.7.26
 -- PHP 版本： 7.3.4
 
@@ -47,8 +47,11 @@ CREATE TABLE `activity` (
 
 INSERT INTO `activity` (`ID`, `ac_name`, `ac_per`, `ac_tani`, `ac_class`, `ac_budget`, `ac_info`, `ac_tip`, `ac_approve`, `ac_apper`) VALUES
 (1, '社团全体大会', '小明', '社团', '社团级或以上', 1000, '会议时间：2020年6月1日下午3：00。\r\n会议地点：学校教室1。\r\n参与人员：请全体成员参加。', '需要学校教室1。', '待审核', '--'),
-(2, '网技部团建', '小红', '网技部', '部门级', 200, '网技部部内团建，大家很辛苦，一起吃个饭吧！', '无', '待审核', '--'),
-(3, '户外团建', '小明', '社团', '社团级或以上', 2000, '社团管理层一起出去吃个饭', '无', '待审核', '--');
+(2, '网技部团建2', '小红', '网技部', '部门级', 200, '网技部部内团建，大家很辛苦，一起吃个饭吧！', '无', '通过', '小红'),
+(3, '户外团建', '小明', '社团', '社团级或以上', 2000, '社团管理层一起出去吃个饭', '无', '待审核', '--'),
+(4, '去游泳', '小明', '网技部', '社团级或以上', 42, '周日去游泳', '校外', '待审核', '--'),
+(5, '网技部第三次团建', '小红', '网技部', '部门级', 444, '网技部第三次团建', '活动室', '通过', '小红'),
+(6, '网技部部长会议', '小红', '网技部', '部门级', 38, '网技部部长会议', '活动室', '通过', '小红');
 
 -- --------------------------------------------------------
 
@@ -95,6 +98,26 @@ INSERT INTO `file` (`ID`, `fi_name`, `fi_root`) VALUES
 -- --------------------------------------------------------
 
 --
+-- 表的结构 `function`
+--
+
+CREATE TABLE `function` (
+  `ID` int(10) NOT NULL COMMENT 'ID',
+  `fu_name` varchar(100) COLLATE utf8_unicode_ci NOT NULL DEFAULT '未命名功能' COMMENT '功能名',
+  `fu_link` varchar(200) COLLATE utf8_unicode_ci NOT NULL DEFAULT '#' COMMENT '功能链接',
+  `fu_flag` int(1) NOT NULL DEFAULT '0' COMMENT '功能开关'
+) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci COMMENT='附加功能开关';
+
+--
+-- 转存表中的数据 `function`
+--
+
+INSERT INTO `function` (`ID`, `fu_name`, `fu_link`, `fu_flag`) VALUES
+(1, '社团报名系统', '/frontend/zc/ybmdl.php', 0);
+
+-- --------------------------------------------------------
+
+--
 -- 表的结构 `news`
 --
 
@@ -121,6 +144,28 @@ INSERT INTO `news` (`ID`, `ne_title`, `ne_content`, `ne_author`, `ne_time`, `ne_
 (9, '再见了，IE 浏览器！', ' <p>昨日，微软在其官方博客宣布：<strong>Internet Explorer 11 桌面应用程序将于 2022 年 6 月 15 日停用</strong>，而 Windows&nbsp;10 上 Internet Explorer 的未来将由 Microsoft Edge 接管。<br/></p><p><img src=\"https://img-blog.csdnimg.cn/img_convert/d09f6ed2b9229c7f1d1a601294f51b95.png\" style=\"max-width:100%;\" contenteditable=\"false\"/></p><p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; （图片来自微软官方）<br/></p><p>自此，这个历史长达 25 年、曾是微软经典王牌、如今却备受诟病的 IE 浏览器（Internet Explorer）被微软官宣“退役”，自明年起退出历史舞台。</p><p><img src=\"https://img-blog.csdnimg.cn/img_convert/3b7dfac9e2d19196564e34a256aff588.png\" style=\"max-width:100%;\" contenteditable=\"false\"/></p><p><strong>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 由辉煌到没落的 IE 浏览器</strong><br/></p><p>1995 年诞生的 IE 浏览器在这 25 年中曾经是浏览器界的龙头老大。<br/><br/>从 90 年代中期到 00 年代中期，IE 浏览器一直是 Windows 的标配，只要你的电脑系统是 Windows，你的浏览器就必定有一个 IE。<br/><br/>得益于这种“捆绑”方式，加之其美观简洁的设计、交互性更强的网页等其他浏览器做不到的特点，2002 年和 2003 年 IE 浏览器的市场份额达到了 95% 的巅峰，几乎是垄断水平。<br/><br/>可似乎是被这傲人的成绩冲昏了头脑，微软逐渐松懈了对 IE 的管理，没有对其后续优化工作投入足够的资源。然而时代在进步、互联网在飞速发展、就连黑客的技术都一年比一年高超，慢下脚步的 IE 浏览器开始显得格格不入。<br/><br/>越来越多的用户投诉 IE 浏览器“又慢又不安全”，以至于在 2006 年，经常崩溃的 IE 6 被评选为“有史以来第八糟糕的科技产品”，甚至在 2011 年“科技史上 50 种最糟糕科技产品”中，IE 6 也赫然出现在第 11 名的位置。<br/><br/>本来一款浏览器不好用，卸载不就好了，用户也不至于广为诟病。可问题就在于，以捆绑 Windows 系统带起来的 IE 浏览器极难卸载。所以是了，又难用又不能卸载，用户当然只能骂一骂泄泄气。那几年，IE 浏览器的口碑极差。<br/><br/>与此同时，与 IE 相比更快更安全并且开源的火狐和&nbsp; Chrome 浏览器先后问世，抢占了大量市场份额，即使期间微软后知后觉地于 2009 年推出大幅改进的 IE 8，但失去的市场已经回不来了：2015 年 IE 浏览器市场占有率跌破 20%，仅有 15.71％。<br/><br/>意识到问题严重性的微软为了挽救口碑和市场份额，于 2015 年推出了 IE 浏览器的替代品——Microsoft Edge，而它的出现也标志着 IE 浏览器终结的开始。<br/></p><p><br/></p><p><strong>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; “<strong>后起之秀</strong>”Microsoft Edge 上位</strong><br/></p><p style=\"text-align:left;\">为了扶持 Edge 浏览器“上位”，2016 年微软在宣布停止继续对 Win 8 以及 IE 8/9/10 版本提供技术支持时，给用户的建议是：升级至 IE11 或者替换成 Win10 的 Edge 吧。<br/><br/>本以为留下的 IE 11 将是 IE 浏览器“全村的希望”，可这几年微软连 IE 这根最后的独苗也没放过：鼓励用户停止使用 IE；在 Edge 中添加 IE 11 兼容模式；Windows 10 系统捆绑 Chromium Edge 浏览器。<br/><br/>不仅如此，去年 8 月微软宣布 2021 年 8 月 17 日起微软 365 办公软件应用和服务将全面停止对 IE 11 的支持。虽然彼时微软表示这一计划并不影响 IE 11 的正常使用，但在微软官方 IE 和 Edge 生命周期问答文档中，还是揭示了 IE 浏览器走向终结的命运：<br/><br/><br/><blockquote>问：IE 11 是最后一版 Internet Explorer 吗？<br/><br/>答：是的，IE 11 是 Internet Explorer 浏览器的最后一个重大版本。</blockquote><br/><br/>因此，昨日微软正式官宣 IE 浏览器的彻底“退役”早就有迹可循，微软只是用这几年让用户逐步转向 Edge 后再公开这一决定罢了。<br/><br/>不过微软还是给怀旧用户留下了一个可以怀念 IE 浏览器的方法：Edge 浏览器中仍可启用 IE 兼容模式，启用 IE 模式后，所有 IE 功能如开发者工具、ActiveX 控件等，都可以在 Edge 浏览器中调用。<br/><br/>不论 IE 浏览器曾经带给人们怎样的印象，属于它的时代早已过去并已官宣终结。<br/></p><p><br/></p><p><br/></p><p><br/></p>', '郑丽媛', '2021-05-20', '社团'),
 (10, '「迷城战线」活动：角色试用主题试炼', '<p> </p><h1 id=\"mcmgk\">「迷城战线」活动：角色试用主题试炼</h1><blockquote><p>来自版块：&nbsp;<a href=\"https://bbs.mihoyo.com/ys/home/28\" target=\"_blank\">官方</a></p></blockquote><p><br/></p><h1 id=\"plrz5\"></h1><p><img src=\"https://upload-bbs.mihoyo.com/upload/2021/05/15/75276539/8095b3625eb4f23a79068e46e5753c99_8125125194673279649.jpg?x-oss-process=image/resize,s_600/quality,q_80/auto-orient,0/interlace,1/format,jpg\" style=\"max-width:100%;\" contenteditable=\"false\"/></p><p>活动期间，旅行者可以使用指定的试用角色编队并挑战6个不同主题的试炼，完成试炼任务可获得<font color=\"#f9963b\">原石、大英雄的经验、天赋培养材料</font>等奖励。</p><p>&nbsp;</p><p><strong>〓活动时间〓</strong></p><p><font color=\"#f9963b\">2021/05/21 10:00 ~&nbsp;2021/05/31 03:59</font></p><p>&nbsp;</p><p><strong>〓参与条件〓</strong></p><p><font color=\"#f9963b\">冒险等阶≥20级</font></p><p>&nbsp;</p><p><strong>〓活动说明〓</strong></p><p>● 「迷城战线」共有6种不同主题的试炼，从活动第一天起，每2天解锁2种新试炼。</p><p>● 在「迷城战线」的试炼中，需要在指定时间内寻找并激活所有的「古代符文」，进行「最终挑战」。</p><p>● 每个试炼拥有不同的地脉异常，敌人和陷阱机关的分布也有所不同。</p><p>● 试炼中只能使用给定的试用角色，<font color=\"#c24f4a\">也无法产生元素共鸣</font>。</p><p>● 若旅行者拥有试用角色，在试炼中，该试用角色<font color=\"#c24f4a\">将继承旅行者实际拥有角色的命之座层数</font>。若旅行者暂未拥有试用角色，命之座将默认为0层。&nbsp;&nbsp;</p>', '西风快报员', '2021-05-19', '米游社'),
 (11, '社团全体大会', ' <h1 id=\"8l9bl\">社团全体大会通知</h1><p><b>各部门：</b><br/></p><p>&nbsp; &nbsp; 根据社团工作需要，经研究决定召开社团全体大会。现将相关事宜通知如下：<b><br/></b></p><p>&nbsp; &nbsp; <b><font color=\"#000000\">=会议时间=</font></b><br/></p><p>&nbsp; &nbsp; <font color=\"#f9963b\">2020年6月1日下午3：00。</font><b><font color=\"#000000\"><br/></font></b></p><p>&nbsp; &nbsp;&nbsp;<b style=\"font-size: 1rem;\">=会议地点=</b><font color=\"#f9963b\"><br/></font></p><p>&nbsp; &nbsp; <font color=\"#f9963b\">学校教室1。</font><b style=\"font-size: 1rem;\"><br/></b></p><p><font color=\"#000000\">&nbsp; &nbsp;&nbsp;</font><b style=\"font-size: 1rem;\">=参与人员=</b><font color=\"#f9963b\"><br/></font></p><p>&nbsp; &nbsp; 请全体成员参加。<b style=\"font-size: 1rem;\"><br/></b></p><p>&nbsp; &nbsp;&nbsp;<b style=\"font-size: 1rem;\">=会议内容=</b><br/></p><blockquote><p>&nbsp; &nbsp; 1.本月工作总结，各部门述职。<b style=\"font-size: 1rem;\"><br/></b></p><p>&nbsp; &nbsp; 2.宣布下个月的工作计划。<br/></p><p>&nbsp; &nbsp; 3.团队建设活动。</p></blockquote><p>&nbsp; &nbsp;&nbsp;<b style=\"font-size: 1rem;\">=会议要求=</b><br/></p><p>&nbsp; &nbsp;&nbsp;1、请参会人员安排好项目工作，按要求准时参会，不得无故缺席。<b style=\"font-size: 1rem;\"><br/></b></p><p>&nbsp; &nbsp;&nbsp;2、服从会议组委会的安排，遵守会场纪律，不得中途退场。<br/></p><p>&nbsp; &nbsp;&nbsp;3、要求与会人员<font color=\"#c24f4a\">6月1日下午2：40到达会场</font>，办公室组织签到。<br/></p><p><br/></p><p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;主席团</p><p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;2021年5月20日</p>', '小明', '2021-05-20', '社团');
+
+-- --------------------------------------------------------
+
+--
+-- 表的结构 `signup`
+--
+
+CREATE TABLE `signup` (
+  `ID` int(8) NOT NULL COMMENT 'ID',
+  `si_yhm` varchar(20) COLLATE utf8_unicode_ci NOT NULL COMMENT '预报名用户名',
+  `si_mm` varchar(20) COLLATE utf8_unicode_ci NOT NULL COMMENT '预报名密码',
+  `si_name` varchar(8) COLLATE utf8_unicode_ci NOT NULL COMMENT '预报名姓名',
+  `si_sex` varchar(4) COLLATE utf8_unicode_ci NOT NULL COMMENT '预报名性别',
+  `si_major` varchar(20) COLLATE utf8_unicode_ci NOT NULL COMMENT '预报名专业',
+  `si_phone` varchar(20) COLLATE utf8_unicode_ci NOT NULL COMMENT '预报名电话',
+  `si_mail` varchar(100) COLLATE utf8_unicode_ci NOT NULL COMMENT '预报名邮箱',
+  `si_depart` varchar(20) COLLATE utf8_unicode_ci NOT NULL COMMENT '预报名志愿部门',
+  `si_adjust` varchar(4) COLLATE utf8_unicode_ci NOT NULL COMMENT '预报名调剂否',
+  `si_intro` varchar(1998) COLLATE utf8_unicode_ci NOT NULL COMMENT '预报名自我介绍',
+  `si_check` varchar(10) COLLATE utf8_unicode_ci NOT NULL DEFAULT '待审核' COMMENT '审核',
+  `si_apper` varchar(20) COLLATE utf8_unicode_ci NOT NULL DEFAULT '--' COMMENT '预报名审批者'
+) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci COMMENT='预报名表';
 
 -- --------------------------------------------------------
 
@@ -175,9 +220,21 @@ ALTER TABLE `file`
   ADD PRIMARY KEY (`ID`);
 
 --
+-- 表的索引 `function`
+--
+ALTER TABLE `function`
+  ADD PRIMARY KEY (`ID`);
+
+--
 -- 表的索引 `news`
 --
 ALTER TABLE `news`
+  ADD PRIMARY KEY (`ID`);
+
+--
+-- 表的索引 `signup`
+--
+ALTER TABLE `signup`
   ADD PRIMARY KEY (`ID`);
 
 --
@@ -195,7 +252,7 @@ ALTER TABLE `user`
 -- 使用表AUTO_INCREMENT `activity`
 --
 ALTER TABLE `activity`
-  MODIFY `ID` int(4) NOT NULL AUTO_INCREMENT COMMENT 'ID', AUTO_INCREMENT=4;
+  MODIFY `ID` int(4) NOT NULL AUTO_INCREMENT COMMENT 'ID', AUTO_INCREMENT=7;
 
 --
 -- 使用表AUTO_INCREMENT `department`
@@ -207,13 +264,25 @@ ALTER TABLE `department`
 -- 使用表AUTO_INCREMENT `file`
 --
 ALTER TABLE `file`
-  MODIFY `ID` int(4) NOT NULL AUTO_INCREMENT COMMENT 'ID', AUTO_INCREMENT=10;
+  MODIFY `ID` int(4) NOT NULL AUTO_INCREMENT COMMENT 'ID', AUTO_INCREMENT=11;
+
+--
+-- 使用表AUTO_INCREMENT `function`
+--
+ALTER TABLE `function`
+  MODIFY `ID` int(10) NOT NULL AUTO_INCREMENT COMMENT 'ID', AUTO_INCREMENT=2;
 
 --
 -- 使用表AUTO_INCREMENT `news`
 --
 ALTER TABLE `news`
   MODIFY `ID` int(4) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
+
+--
+-- 使用表AUTO_INCREMENT `signup`
+--
+ALTER TABLE `signup`
+  MODIFY `ID` int(8) NOT NULL AUTO_INCREMENT COMMENT 'ID';
 
 --
 -- 使用表AUTO_INCREMENT `user`

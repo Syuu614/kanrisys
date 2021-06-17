@@ -46,8 +46,14 @@ include 'C:\phpstudy_pro\WWW\bs\backend\class\Sql.php';
     </nav>
 		</div>
 	</div>
+		<div class="row clearfix">
+		<div class="col-md-12 column">
+		<h1>友情链接</h1>
+		<span>感谢支持！</span>
+		</div>
+		</div>
 	<div class="row clearfix">
-		<div class="col-md-12 column" style="margin-top:61px">
+		<div class="col-md-12 column" >
 		  <div class="card d-inline-flex link" >
 		  
                         <div class="card-body" style="border-radius: 0px;">
@@ -75,6 +81,20 @@ include 'C:\phpstudy_pro\WWW\bs\backend\class\Sql.php';
                         </div>
                         </a>
         </div>            
+        
+                <div class="card d-inline-flex link" >
+		<div class="card-body" style="border-radius: 0px;">
+                        <a href="https://github.com/Syuu614/kanrisys" target="_blank" ><!-- https://cdn.eevee.fun/linkdef.jpg -->
+                            <div><img class="avatar" src="https://github.githubassets.com/favicons/favicon.png"></div>
+                            <div class="url">
+                                <div style="margin: 0.42rem 0;">
+                                    <h4>Github仓库</h4>
+                                </div>
+                                <div style="margin: 0.42rem 0;"><span>毕业设计-基于Web的社团信息管理系统【现已开源】</span></div>
+                            </div>
+                        </div>
+                        </a>
+        </div>
         
         <div class="card d-inline-flex link" >
 		<div class="card-body" style="border-radius: 0px;">
@@ -216,8 +236,7 @@ include 'C:\phpstudy_pro\WWW\bs\backend\class\Sql.php';
                             </div>
                         </div>
                         </a>
-        </div>
-        
+        </div>       
                     </div>
 		</div>
 	</div>

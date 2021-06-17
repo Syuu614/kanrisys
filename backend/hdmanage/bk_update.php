@@ -23,17 +23,21 @@ $result=mysqli_query($conn,$sql1);
 $myrow1=mysqli_fetch_array($result);
 $auth=$myrow1[0];
 $name=$myrow1[1];
-//获得本活动的审批请款和审批者
+//获得本活动的审批情况和审批者
 $sql1="select ac_approve,ac_apper from activity where ID='$id'";
 $result=mysqli_query($conn,$sql1);
 $myrow=mysqli_fetch_array($result);
 $approve=$myrow[0];
 $apper=$myrow[1];
 //判断审核者的权限与当前审批者的权限大小
-$sql1="select auth from user where yhm='$apper'";
-$result=mysqli_query($conn,$sql1);
-$myrow1=mysqli_fetch_array($result);
-$apperauth=$myrow1[0];
+if ($apper!="--") {
+    $sql1="select auth from user where yhm='$apper'";
+    $result=mysqli_query($conn,$sql1);
+    $myrow1=mysqli_fetch_array($result);
+    $apperauth=$myrow1[0];
+}elseif ($apper=="--"){//如果没有人审批，则任何有权限的人可以审批
+    $apperauth=-1;
+}
 
 if ($apperauth>$auth) {
     echo "<script>alert('此活动已有他人代理！（quan）');</script>";
@@ -41,7 +45,7 @@ if ($apperauth>$auth) {
     echo '审批者名：'.$approve.'审批者权'.$apperauth;
     return;
 }
-if ($apperauth==$auth||$apper!=$name) {
+if ($apperauth==$auth&&$apper!=$name) {
     echo "<script>alert('此活动已有他人代理！（ming）');history.back();</script>";
     return;
 }

@@ -70,7 +70,7 @@ include 'C:\phpstudy_pro\WWW\bs\backend\class\Sql.php';
       <td>申请单位：<input type="text" name="tani" placeholder="申请单位" class="form-control" value="<?php echo $myrow[3]; ?>"/></td>
     </tr>
     <tr>
-      <td>活动级别：<input type="radio" name="class" checked value="社团级或以上"/>社团级或以上<input type="radio" name="class" value="部门级"/>部门级<input type="radio" name="class" value="仅部门内部"/>仅部门内部</td>
+      <td>活动级别：<input type="radio" name="class" value="社团级或以上"/>社团级或以上<input type="radio" name="class" value="部门级"/>部门级<input type="radio" name="class" value="仅部门内部"/>仅部门内部</td>
     </tr>
     <tr>
       <td>预算金额：<input name="budget" class="form-control" type="number" min="0" value="<?php echo $myrow[5]?>"/></td>

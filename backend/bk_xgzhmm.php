@@ -31,6 +31,6 @@ if ($result) {
     echo "<script>alert('修改成功！');window.location.href ='/index.php';</script>";
     return ;
 }else {
-    echo "<script>alert('用户名或密码输入错误！mmre');history.back();</script>";
+    echo "<script>alert('用户名或密码输入错误！');history.back();</script>";
     return;
 }
