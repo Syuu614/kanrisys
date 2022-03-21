@@ -1,4 +1,5 @@
 <?php
+//登陆账户设置中“旧用户名密码”的正确判断。
 include './class/Sql.php';
 $yhm=$_POST['yhm'];
 $mm=$_POST['mm'];

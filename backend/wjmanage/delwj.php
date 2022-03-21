@@ -1,4 +1,5 @@
 <?php
+//主席 对于文件的删除
 include '../class/Sql.php';
 $id=$_POST['id'];
 $sql="select * from file where ID='$id'";

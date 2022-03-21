@@ -1,4 +1,5 @@
 <?php
+//修改个人信息功能实现
 include './class/Sql.php';
 $name=$_POST['name'];
 $sex=$_POST['sex'];

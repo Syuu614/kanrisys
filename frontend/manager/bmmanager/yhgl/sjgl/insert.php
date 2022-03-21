@@ -77,7 +77,7 @@
 </table>
 </form>
 <div style="margin-bottom:61px">
-<a href="/frontend/manager/gjmanager/yhgl/cygl.php" class="btn btn-link">返回成员管理</a>
+<a href="/frontend/manager/bmmanager/yhgl/cygl.php" class="btn btn-link">返回成员管理</a>
 </div>
 		</div>
 		<div class="col-md-4 column">

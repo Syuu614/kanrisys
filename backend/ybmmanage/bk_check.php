@@ -1,4 +1,5 @@
 <?php
+//部长 预报名功能中的审批功能
 include 'C:\phpstudy_pro\WWW\bs\backend\class\Sql.php';
 $id=$_POST['id'];
 $approve=$_POST['approve'];

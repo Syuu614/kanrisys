@@ -1,14 +1,6 @@
 <?php
+//登陆系统功能实现。
 use PhpMyAdmin\Session;
-
-/*$host="localhost";
-$username="root";
-$password="root";
-if ($connID=mysqli_connect($host,$username,$password)) {
-    echo 1;
-}else{
-    echo 0;
-}*/
 include './class/Sql.php';
 session_start();
 $_SESSION['yhm']=$_POST['yhm'];

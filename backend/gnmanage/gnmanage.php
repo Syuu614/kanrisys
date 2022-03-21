@@ -1,4 +1,5 @@
 <?php
+//功能管理功能，对于一些功能的开关管理。
 include '../class/Sql.php';
 $id=$_POST['id'];
 $flag=$_POST['flag'];

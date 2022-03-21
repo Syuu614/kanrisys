@@ -1,4 +1,5 @@
 <?php
+//“部长”对于部门内授权的删除。
 include '../class/Sql.php';
 $id=$_POST['id'];
 $yhm=$_SESSION['yhm'];

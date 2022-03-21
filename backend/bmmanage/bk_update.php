@@ -1,4 +1,5 @@
 <?php
+//部门管理中“修改信息”功能。
 include 'C:\phpstudy_pro\WWW\bs\backend\class\Sql.php';
 $id=$_POST['id'];
 $de_name=$_POST['name'];

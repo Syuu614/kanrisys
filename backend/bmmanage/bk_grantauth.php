@@ -1,4 +1,5 @@
 <?php
+/*成员管理中“快速授权”功能。 */
 include '../class/Sql.php';
 $id=$_POST['id'];
 $yhm=$_SESSION['yhm'];

@@ -1,4 +1,5 @@
 <?php
+//活动申请功能实现。
 include './class/Sql.php';
 $ac_name=$_POST['ac_name'];
 $ac_per=$_POST['ac_per'];

@@ -61,32 +61,32 @@ include 'C:\phpstudy_pro\WWW\bs\backend\class\Sql.php';
 ?>
 
       <tr>
-      <td><b>姓名：</b><?php echo $myrow[1]; ?></td>
+      <td><b>姓名：</b><?php echo $myrow[3]; ?></td>
     </tr>
         <tr>
-      <td><b>性别：</b><?php echo $myrow[2]; ?></td>
+      <td><b>性别：</b><?php echo $myrow[4]; ?></td>
     </tr>
     <tr>
-      <td><b>专业：</b><?php echo $myrow[3]; ?></td>
+      <td><b>专业：</b><?php echo $myrow[5]; ?></td>
     </tr>
     <tr>
-      <td><b>电话：</b><?php echo $myrow[4]; ?></td>
+      <td><b>电话：</b><?php echo $myrow[6]; ?></td>
     </tr>
     <tr>
-      <td><b>邮箱：</b><?php echo $myrow[5]?></td>
+      <td><b>邮箱：</b><?php echo $myrow[7]?></td>
     </tr>
     <tr>
-      <td><b>志愿部门：</b><?php echo $myrow[6]; ?></td>
+      <td><b>志愿部门：</b><?php echo $myrow[8]; ?></td>
     </tr>
     <tr>
-      <td><b>是否调剂：</b><?php echo $myrow[7]; ?></td>
+      <td><b>是否调剂：</b><?php echo $myrow[9]; ?></td>
     </tr>
     
     <tr>
-      <td><b>自己的优势：</b><br/><?php echo $myrow[8]; ?></td>
+      <td><b>自己的优势：</b><br/><?php echo $myrow[10]; ?></td>
     </tr>
     <tr>
-      <td><b>审核状态：</b><br/><?php echo $myrow[9]; ?></td>
+      <td><b>审核状态：</b><br/><?php echo $myrow[11]; ?></td>
     </tr>
 <?php } ?>
   </tbody>

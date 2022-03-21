@@ -1,4 +1,5 @@
 <?php
+//“部长”删除部内成员的信息。
 include '../class/Sql.php';
 $id=$_POST['id'];
 $yhm=$_SESSION['yhm'];

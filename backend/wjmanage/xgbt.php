@@ -1,4 +1,5 @@
 <?php
+//主席对于文件标题的修改。
 include 'C:\phpstudy_pro\WWW\bs\backend\class\Sql.php';
 $name=$_POST['xbt'];
 $id=$_POST['id'];

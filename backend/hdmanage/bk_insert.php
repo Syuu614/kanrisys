@@ -1,4 +1,5 @@
 <?php
+//新闻管理中“增加新闻”功能。
 include 'C:\phpstudy_pro\WWW\bs\backend\class\Sql.php';
 $ne_title=$_POST['title'];
 $ne_author=$_POST['author'];

@@ -1,4 +1,5 @@
 <?php
+//修改密码功能实现。
 include './class/Sql.php';
 $yhm=$_POST['yhm'];
 $mm=$_POST['mm'];

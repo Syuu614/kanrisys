@@ -1,4 +1,5 @@
 <?php
+//草稿。。。
 include 'C:\phpstudy_pro\WWW\bs\backend\class\Sql.php';
 $id=$_POST['id'];
 $name=$_POST['name'];

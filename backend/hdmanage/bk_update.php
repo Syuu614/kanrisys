@@ -1,4 +1,5 @@
 <?php
+//活动管理中“审批活动”的功能。（顺带更新活动的信息）
 include 'C:\phpstudy_pro\WWW\bs\backend\class\Sql.php';
 $id=$_POST['id'];
 $ac_name=$_POST['name'];

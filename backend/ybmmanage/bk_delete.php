@@ -1,4 +1,5 @@
 <?php
+//预报名功能中的 删除信息功能。
 include '../class/Sql.php';
 $id=$_POST['id'];
 $yhm=$_SESSION['yhm'];

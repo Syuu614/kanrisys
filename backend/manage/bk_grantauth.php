@@ -1,4 +1,5 @@
 <?php
+//部长对部门内部的授权。
 include '../class/Sql.php';
 $id=$_POST['id'];
 $yhm=$_SESSION['yhm'];

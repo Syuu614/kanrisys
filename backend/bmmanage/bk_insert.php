@@ -1,4 +1,5 @@
 <?php
+//部门管理中“增加部门”功能。
 include 'C:\phpstudy_pro\WWW\bs\backend\class\Sql.php';
 $de_name=$_POST['name'];
 $de_info=$_POST['info'];

@@ -1,4 +1,5 @@
 <?php
+//活动管理中“快速通过”的功能。
 include '../class/Sql.php';
 $id=$_POST['id'];
 $yhm=$_SESSION['yhm'];

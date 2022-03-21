@@ -1,4 +1,5 @@
 <?php
+/*管理者管理的“删除权限”功能。 */
 include '../class/Sql.php';
 $id=$_POST['id'];
 $yhm=$_SESSION['yhm'];

@@ -1,4 +1,5 @@
 <?php
+//主席 对于文件的上传
 include 'C:\phpstudy_pro\WWW\bs\backend\class\Sql.php';
 $name=$_POST['name'];
 $file=$_POST['file'];

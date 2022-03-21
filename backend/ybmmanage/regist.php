@@ -1,4 +1,5 @@
 <?php
+//预报名系统注册功能。
 include 'C:\phpstudy_pro\WWW\bs\backend\class\Sql.php';
 $yhm=$_POST['yhm'];
 $mm=$_POST['mm'];

@@ -1,4 +1,5 @@
 <?php
+//预报名系统登陆功能。
 include 'C:\phpstudy_pro\WWW\bs\backend\class\Sql.php';
 session_start();
 $_SESSION['ybm_yhm']=$_POST['yhm'];

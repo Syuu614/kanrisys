@@ -1,4 +1,5 @@
 <?php
+/*部门管理中的“删除功能”。前端传递了部门的ID，根据ID删除数据库中的数据。 */
 include '../class/Sql.php';
 $id=$_POST['id'];
 $yhm=$_SESSION['yhm'];

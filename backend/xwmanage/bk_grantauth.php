@@ -1,4 +1,5 @@
 <?php
+//草稿。。。
 include '../class/Sql.php';
 $id=$_POST['id'];
 $yhm=$_SESSION['yhm'];

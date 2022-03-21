@@ -1,4 +1,5 @@
 <?php
+//预报名功能中 更新 功能。
 include 'C:\phpstudy_pro\WWW\bs\backend\class\Sql.php';
 $name=$_POST['name'];
 $sex=$_POST['sex'];

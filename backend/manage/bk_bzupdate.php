@@ -1,4 +1,5 @@
 <?php
+//“部长”对部门成员的修改功能。
 include 'C:\phpstudy_pro\WWW\bs\backend\class\Sql.php';
 $id=$_POST['id'];
 $name=$_POST['name'];

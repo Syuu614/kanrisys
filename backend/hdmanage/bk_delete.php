@@ -1,4 +1,5 @@
 <?php
+//新闻管理中“删除新闻”功能。
 include '../class/Sql.php';
 $id=$_POST['id'];
 $yhm=$_SESSION['yhm'];

@@ -1,4 +1,5 @@
 <?php
+//修改新闻功能。
 include 'C:\phpstudy_pro\WWW\bs\backend\class\Sql.php';
 $id=$_POST['id'];
 $ne_title=$_POST['title'];

@@ -1,4 +1,5 @@
 <?php
+/*数据库类：用来连接数据库，传递连接数据库使用的信息。 */
 /*sql语句差错
  * if (!$result) {
     printf("Error: %s\n", mysqli_error($conn));}
